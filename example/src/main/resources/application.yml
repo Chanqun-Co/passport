@@ -1,0 +1,3 @@
+passport:
+  secret:
+  expiry_time:
