@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PassportController {
     @GetMapping("/passport")
-    public ResponseEntity<Object> getPassport(@Passport Object passport){
-        return ResponseEntity.ok(passport);
+    public ResponseEntity<Object> getPassport(@Passport String passport){
+        System.out.println(passport);
+        return ResponseEntity.ok("test");
     }
 }
