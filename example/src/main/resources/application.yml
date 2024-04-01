@@ -1,4 +1,4 @@
 passport:
   token:
     secret:
-    expiry_time:
+    expiration_time:
