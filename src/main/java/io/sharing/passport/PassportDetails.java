@@ -1,6 +1,8 @@
 package io.sharing.passport;
 
-public class PassportDetails {
+import java.io.Serializable;
+
+public class PassportDetails implements Serializable {
     private String userUuid;
     private String email;
     private String firstName;
@@ -34,6 +36,18 @@ public class PassportDetails {
 
     public static PassportBuilder builder() {
         return new PassportBuilder();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getClass().getSimpleName()).append(" [");
+        sb.append("User UUID=").append(this.userUuid).append(", ");
+        sb.append("Email=").append(this.email).append(", ");
+        sb.append("FirstName=").append(this.firstName).append(", ");
+        sb.append("LastName=").append(this.lastName);
+        sb.append("]");
+        return sb.toString();
     }
 
     public static class PassportBuilder {

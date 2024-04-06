@@ -1,17 +1,18 @@
-package io.sharing.passport;
+package io.sharing.passport.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
 @ConfigurationProperties(prefix = "passport")
 public class PassportProperties {
     public static String HEADER_NAME = "X-PASSPORT-TOKEN";
-
     private Token token;
 
     public Token getToken() {
         return token;
+    }
+
+    public void setToken(Token token) {
+        this.token = token;
     }
 
     public static class Token {
@@ -19,6 +20,7 @@ public class PassportProperties {
 
         private String secret;
 
+        /** millisecond */
         private long expirationTime;
 
         public String getSubject() {
@@ -31,6 +33,18 @@ public class PassportProperties {
 
         public long getExpirationTime() {
             return expirationTime;
+        }
+
+        public void setSubject(String subject) {
+            this.subject = subject;
+        }
+
+        public void setSecret(String secret) {
+            this.secret = secret;
+        }
+
+        public void setExpirationTime(long expirationTime) {
+            this.expirationTime = expirationTime;
         }
     }
 }
