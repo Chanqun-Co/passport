@@ -1,6 +1,0 @@
-rootProject.name = 'passportexample'
-include('passport')
-
-for (project in rootProject.children) {
-    project.projectDir = file("../")
-}
