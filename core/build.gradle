@@ -4,6 +4,7 @@ apply {
 
 jar {
     enabled = true
+    archiveClassifier = ''
 }
 
 bootJar {
