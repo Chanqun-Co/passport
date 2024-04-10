@@ -28,3 +28,14 @@ allprojects {
         useJUnitPlatform()
     }
 }
+
+publishing {
+    publications {
+        project(':core').task('publishing')
+    }
+
+    copy {
+        from "core/build"
+        into "build"
+    }
+}
