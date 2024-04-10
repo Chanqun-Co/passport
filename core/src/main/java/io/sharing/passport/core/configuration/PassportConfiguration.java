@@ -1,7 +1,7 @@
-package io.sharing.passport.configuration;
+package io.sharing.passport.core.configuration;
 
-import io.sharing.passport.PassportArgumentResolver;
-import io.sharing.passport.PassportTokenProvider;
+import io.sharing.passport.core.PassportArgumentResolver;
+import io.sharing.passport.core.PassportTokenProvider;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;

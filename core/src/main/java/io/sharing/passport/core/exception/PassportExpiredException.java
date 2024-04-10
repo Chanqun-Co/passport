@@ -1,4 +1,4 @@
-package io.sharing.passport.exception;
+package io.sharing.passport.core.exception;
 
 public class PassportExpiredException extends RuntimeException {
     public PassportExpiredException(String message) {

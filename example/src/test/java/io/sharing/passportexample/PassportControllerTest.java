@@ -1,8 +1,8 @@
 package io.sharing.passportexample;
 
-import io.sharing.passport.PassportDetails;
-import io.sharing.passport.PassportTokenProvider;
-import io.sharing.passport.configuration.PassportProperties;
+import io.sharing.passport.core.PassportDetails;
+import io.sharing.passport.core.PassportTokenProvider;
+import io.sharing.passport.core.configuration.PassportProperties;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ class PassportControllerTest {
     @Autowired
     PassportTokenProvider tokenProvider;
 
-    @DisplayName("헤더에 passport 토큰을 실어서 보내면 passport 정보를 파싱하여 응답한다.")
+    @DisplayName("헤더에 passport 토큰을 실어서 보내면 PassportResolver가 passport 정보를 파싱하여 응답한다.")
     @Test
     public void passportTest() throws Exception {
         PassportDetails passportDetails = PassportDetails.builder()
