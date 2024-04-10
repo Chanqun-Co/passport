@@ -1,4 +1,4 @@
-package io.sharing.passport.configuration;
+package io.sharing.passport.core.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

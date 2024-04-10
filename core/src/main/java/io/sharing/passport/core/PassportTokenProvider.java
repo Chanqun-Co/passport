@@ -1,13 +1,13 @@
-package io.sharing.passport;
+package io.sharing.passport.core;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import io.sharing.passport.configuration.PassportProperties;
-import io.sharing.passport.exception.PassportExpiredException;
-import io.sharing.passport.exception.UnAuthenticatedPassportException;
+import io.sharing.passport.core.configuration.PassportProperties;
+import io.sharing.passport.core.exception.PassportExpiredException;
+import io.sharing.passport.core.exception.UnAuthenticatedPassportException;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;

@@ -1,4 +1,4 @@
-package io.sharing.passport;
+package io.sharing.passport.core;
 
 import java.io.Serializable;
 

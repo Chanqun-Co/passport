@@ -1,6 +1,6 @@
-package io.sharing.passport;
+package io.sharing.passport.core;
 
-import io.sharing.passport.configuration.PassportProperties;
+import io.sharing.passport.core.configuration.PassportProperties;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
