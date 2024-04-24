@@ -1,21 +1,24 @@
 package io.sharing.passport.core;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class PassportDetails implements Serializable {
     private String userUuid;
     private String email;
     private String firstName;
     private String lastName;
+    private List<String> roles;
 
     public PassportDetails() {
     }
 
-    public PassportDetails(String userUuid, String email, String firstName, String lastName) {
+    public PassportDetails(String userUuid, String email, String firstName, String lastName, List<String> roles) {
         this.userUuid = userUuid;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.roles = roles;
     }
 
     public String getUserUuid() {
@@ -34,6 +37,14 @@ public class PassportDetails implements Serializable {
         return lastName;
     }
 
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void addRole(String role){
+        this.roles.add(role);
+    }
+
     public static PassportBuilder builder() {
         return new PassportBuilder();
     }
@@ -45,7 +56,8 @@ public class PassportDetails implements Serializable {
         sb.append("User UUID=").append(this.userUuid).append(", ");
         sb.append("Email=").append(this.email).append(", ");
         sb.append("FirstName=").append(this.firstName).append(", ");
-        sb.append("LastName=").append(this.lastName);
+        sb.append("LastName=").append(this.lastName).append(", ");
+        sb.append("roles=").append(this.roles);
         sb.append("]");
         return sb.toString();
     }
@@ -55,6 +67,7 @@ public class PassportDetails implements Serializable {
         private String email;
         private String firstName;
         private String lastName;
+        private List<String> roles;
 
         public PassportBuilder() {
         }
@@ -79,8 +92,13 @@ public class PassportDetails implements Serializable {
             return this;
         }
 
+        public PassportBuilder roles(List<String> roles) {
+            this.roles = roles;
+            return this;
+        }
+
         public PassportDetails build() {
-            return new PassportDetails(this.userUuid, this.email, this.firstName, this.lastName);
+            return new PassportDetails(userUuid, email, firstName, lastName, roles);
         }
     }
 }
