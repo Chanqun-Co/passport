@@ -1,6 +1,7 @@
 package io.sharing.passport.core;
 
 import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.List;
 
 public class PassportDetails implements Serializable {
@@ -8,17 +9,9 @@ public class PassportDetails implements Serializable {
     private String email;
     private String firstName;
     private String lastName;
-    private List<String> roles;
+    private final List<UserRole> roles = new LinkedList<>();
 
     public PassportDetails() {
-    }
-
-    public PassportDetails(String userUuid, String email, String firstName, String lastName, List<String> roles) {
-        this.userUuid = userUuid;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.roles = roles;
     }
 
     public String getUserUuid() {
@@ -37,12 +30,16 @@ public class PassportDetails implements Serializable {
         return lastName;
     }
 
-    public List<String> getRoles() {
+    public List<UserRole> getRoles() {
         return roles;
     }
 
-    public void addRole(String role){
+    public void addRole(UserRole role){
         this.roles.add(role);
+    }
+
+    public void removeRole(UserRole role) {
+        this.roles.remove(role);
     }
 
     public static PassportBuilder builder() {
@@ -63,42 +60,38 @@ public class PassportDetails implements Serializable {
     }
 
     public static class PassportBuilder {
-        private String userUuid;
-        private String email;
-        private String firstName;
-        private String lastName;
-        private List<String> roles;
+        private final PassportDetails data = new PassportDetails();
 
         public PassportBuilder() {
         }
 
         public PassportBuilder email(String email) {
-            this.email = email;
+            this.data.email = email;
             return this;
         }
 
         public PassportBuilder lastName(String lastName) {
-            this.lastName = lastName;
+            this.data.lastName = lastName;
             return this;
         }
 
         public PassportBuilder firstName(String firstName) {
-            this.firstName = firstName;
+            this.data.firstName = firstName;
             return this;
         }
 
         public PassportBuilder userUuid(String userUuid) {
-            this.userUuid = userUuid;
+            this.data.userUuid = userUuid;
             return this;
         }
 
-        public PassportBuilder roles(List<String> roles) {
-            this.roles = roles;
+        public PassportBuilder roles(List<UserRole> roles) {
+            this.data.roles.addAll(roles);
             return this;
         }
 
         public PassportDetails build() {
-            return new PassportDetails(userUuid, email, firstName, lastName, roles);
+            return this.data;
         }
     }
 }
