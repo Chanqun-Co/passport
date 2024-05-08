@@ -36,7 +36,7 @@ class PassportTokenProviderTest {
                 .email("kimzerovirus@email.com")
                 .lastName("kim")
                 .firstName("zerovirus")
-                .roles(List.of("ROLE_USER"))
+                .roles(List.of(UserRole.GUEST))
                 .build();
 
         String token = tokenProvider.generate(details);
