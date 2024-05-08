@@ -6,9 +6,10 @@ Content-Type: application/json
   "userUuid": "85b73dbd-44da-4d22-8e62-518f67faac38",
   "email": "kimzerovirus@email.com",
   "lastName": "kim",
-  "firstName": "zerovirus"
+  "firstName": "zerovirus",
+  "roles": ["ROLE_USER"]
 }
 
 ### Parse Passport JWT Token
 GET http://localhost:8080/passport
-X-PASSPORT-TOKEN: eyJhbGciOiJIUzUxMiJ9.eyJwYXNzcG9ydCI6eyJ1c2VyVXVpZCI6Ijg1YjczZGJkLTQ0ZGEtNGQyMi04ZTYyLTUxOGY2N2ZhYWMzOCIsImVtYWlsIjoia2ltemVyb3ZpcnVzQGVtYWlsLmNvbSIsImZpcnN0TmFtZSI6Inplcm92aXJ1cyIsImxhc3ROYW1lIjoia2ltIn0sImV4cCI6MTcxMjcxMDM3N30.tv-ziZ_1GBpZnH05ZWYGbbPoDQWOk5sNnXONA0npeW11WUQpNzP42KaiKlynFSP2iE9Laps4Ea4JfmfEEOdneg
+X-PASSPORT-TOKEN: eyJhbGciOiJIUzUxMiJ9.eyJwYXNzcG9ydCI6eyJ1c2VyVXVpZCI6Ijg1YjczZGJkLTQ0ZGEtNGQyMi04ZTYyLTUxOGY2N2ZhYWMzOCIsImVtYWlsIjoia2ltemVyb3ZpcnVzQGVtYWlsLmNvbSIsImZpcnN0TmFtZSI6Inplcm92aXJ1cyIsImxhc3ROYW1lIjoia2ltIiwicm9sZXMiOlsiUk9MRV9VU0VSIl19LCJleHAiOjE3MTM5NTY2NDd9.3auRGk9LvJF3JkUlCaXgYGnRTP4LMFhLvPYOvDh21q0H_fvo2C6mEOP05XmytLxbrO0fBeIuUYkPdrkzaK6U1w
